@@ -11,11 +11,11 @@ const ModificarVehiculo = ({ vehiculos, setVehiculos }) => {
     const handleChange = (e) => {
         const vehiculo = vehiculos.find(v => v.id === e.target.value);
         setId(e.target.value);
-        setMarca(vehiculo.marca || '');
-        setModelo(vehiculo.modelo || '');
-        setAnio(vehiculo.anio || '');
-        setTransmision(vehiculo.transmision || '');
-        setPatente(vehiculo.patente || '');
+        setMarca(vehiculo ? vehiculo.marca : '');
+        setModelo(vehiculo ? vehiculo.modelo : '');
+        setAnio(vehiculo ? vehiculo.anio : '');
+        setTransmision(vehiculo ? vehiculo.transmision : '');
+        setPatente(vehiculo ? vehiculo.patente : '');
     };
 
     const handleModificar = () => {
