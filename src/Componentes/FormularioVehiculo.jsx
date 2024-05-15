@@ -27,6 +27,8 @@ export const FormularioVehiculo = ({ setVehiculos, vehiculos, vehiculo, setVehic
     }
 
     return (
+        <div>
+
         <Form  visible={true} banco="" > 
             <Form.Group>
                 <Form.Label>Marca: </Form.Label>
@@ -60,6 +62,6 @@ export const FormularioVehiculo = ({ setVehiculos, vehiculos, vehiculo, setVehic
                 
             </Row>
             </Form>
-            
+            </div>
     );
 }

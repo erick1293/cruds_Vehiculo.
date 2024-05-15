@@ -63,7 +63,7 @@ export const Seccion1 = () => {
             <br />
             <br />
             <div>
-                <Table>  
+                <table className="table table-hover" id="tblAutomoviles" >  
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -71,14 +71,14 @@ export const Seccion1 = () => {
                             <th>Modelo</th>
                             <th>Año</th>
                             <th>Transmisión</th>
-                            <th>Patente</th>
-                            <th>Acción</th>
+                            <th>Patente</th> 
+                            <th>Acciónes</th>
                         </tr>
                     </thead>
                     <tbody>
                         {Array.isArray(vehiculos) && vehiculos.length > 0 && (
                             vehiculos.map(({ id, marca, modelo, anio, transmision, patente }) => (
-                                <tr key={id}>
+                                <tr style={{ textAlign: 'center' }} key={id}>
                                     <td>{id}</td>
                                     <td>{marca}</td>
                                     <td>{modelo}</td>
@@ -93,7 +93,7 @@ export const Seccion1 = () => {
                             ))
                         )}
                     </tbody>
-                </Table> 
+                </table> 
             </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
