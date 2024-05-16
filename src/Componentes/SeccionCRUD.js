@@ -4,12 +4,10 @@ import AgregarVehiculo from './AgregarVehiculo';
 import ModificarVehiculo from './ModificarVehiculo';
 import EliminarVehiculo from './EliminarVehiculo';
 import MostrarVehiculos from './MostrarVehiculos';
-import { FormularioVehiculo } from './FormularioVehiculo';
 
 const SeccionCRUD = () => {
     const [vehiculos, setVehiculos] = useState([]);
-    const [vehiculo, setVehiculo] = useState({});
-    const [isEditing, setIsEditing] = useState(false);
+
 
     return (
         <Tabs defaultActiveKey="agregar" id="crud-tabs">
