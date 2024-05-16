@@ -39,9 +39,8 @@ const ModificarVehiculo = ({ vehiculos, setVehiculos }) => {
         });
 
         setVehiculos(updatedVehiculos);
-        // Aquí podrías enviar los datos actualizados al servidor o realizar cualquier otra operación necesaria
         console.log('Vehículo modificado:', updatedVehiculos.find(v => v.id === id));
-        // Limpiar los campos después de modificar el vehículo
+
         setId('');
         setMarca('');
         setModelo('');

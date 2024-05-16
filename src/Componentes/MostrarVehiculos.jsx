@@ -6,7 +6,7 @@ const MostrarVehiculos = ({ vehiculos }) => {
             <h2>Lista de Vehículos</h2>
             <ul>
                 {vehiculos.map(v => (
-                    <li key={v.id}>{v.marca} {v.modelo}</li>
+                    <li key={v.id}>{v.id} {v.marca} {v.modelo} {v.anio}{v.patente}</li>
                 ))}
             </ul>
         </div>

@@ -8,7 +8,7 @@ export const FormularioVehiculo = ({ setVehiculos, vehiculos, vehiculo, setVehic
     const [marca, setMarca] = useState('');
     const [modelo, setModelo] = useState('');
     const [anio, setAnio] = useState('');
-    const [transmision, setTransmision] = useState('automatic');
+    const [transmision, setTransmision] = useState('automatico');
     const [patente, setPatente] = useState('');
 
     useEffect(() => {
@@ -23,12 +23,12 @@ export const FormularioVehiculo = ({ setVehiculos, vehiculos, vehiculo, setVehic
 
     const handleRegistro = () => {
         const newVehiculo = {
-            'id': uuid(),
-            'marca': marca,
-            'modelo': modelo,
-            'anio': anio,
-            'transmision': transmision,
-            'patente': patente,
+            id: uuid(),
+            marca,
+            modelo,
+            anio,
+            transmision,
+            patente,
         };
         setVehiculos([...vehiculos, newVehiculo]);
         resetForm();
@@ -44,7 +44,7 @@ export const FormularioVehiculo = ({ setVehiculos, vehiculos, vehiculo, setVehic
         setMarca('');
         setModelo('');
         setAnio('');
-        setTransmision('automatic');
+        setTransmision('automatico');
         setPatente('');
         setVehiculo({});
     };
@@ -66,7 +66,7 @@ export const FormularioVehiculo = ({ setVehiculos, vehiculos, vehiculo, setVehic
             <Form.Group>
                 <Form.Label>Transmisión:</Form.Label>
                 <Form.Control as="select" value={transmision} name="transmision" onChange={(e) => setTransmision(e.target.value)}>
-                    <option value="automatic">Automático</option>
+                    <option value="automatico">Automático</option>
                     <option value="manual">Manual</option>
                 </Form.Control>
             </Form.Group>
