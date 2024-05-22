@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SeccionCRUD from './Componentes/SeccionCRUD';
+import SeccionCRUD from './Componentes/Vehiculo/SeccionCRUD';
 
 function App() {
     return (
