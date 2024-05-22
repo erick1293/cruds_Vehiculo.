@@ -29,9 +29,9 @@ const EliminarVehiculo = ({ vehiculos, setVehiculos }) => {
                                 <tr>
                                     <th> {v.id} </th>
                                     <th>{v.marca}</th>
+                                    <th>{v.modelo}</th>
                                     <th>  {v.anio}</th>
                                     <th>  {v.modelo}</th>
-                                    <th> {v.patente}</th>
                                     <button onClick={() => handleDelete(v.id)}>Eliminar</button>
                                 </tr>
                             </thead></Table>  

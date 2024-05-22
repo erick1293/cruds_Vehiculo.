@@ -14,6 +14,7 @@ const MostrarVehiculos = ({ vehiculos }) => {
                                     <th>MARCA</th>
                                     <th>MODELO</th>
                                     <th>AÑO</th>
+                                    <th>Transmision</th>
                                     <th>PATENTE</th>
                                 </tr>
                             </thead>
@@ -22,7 +23,8 @@ const MostrarVehiculos = ({ vehiculos }) => {
                                     <th> {v.id} </th>
                                     <th>{v.marca}</th>
                                     <th>  {v.modelo}</th>
-                                    <th>  {v.anio}</th>
+                                       <th>  {v.anio}</th>
+                                    <th>  {v.transmision}</th>
                                     <th> {v.patente}</th>
                                 </tr>
                             </thead></Table>
