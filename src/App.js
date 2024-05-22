@@ -9,7 +9,7 @@ function App() {
                 <h1>Gestión de Vehículos</h1>
             </header>
             <main>
-                <SeccionCRUD />
+                <SeccionCRUD/>
             </main>
         </div>
     );
