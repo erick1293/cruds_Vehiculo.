@@ -22,6 +22,7 @@ const EliminarVehiculo = ({ vehiculos, setVehiculos }) => {
                                     <th>MODELO</th>
                                     <th>AÑO</th>
                                     <th>PATENTE</th>
+                                    <th>Transmision</th>
                                     <th>accion</th>
                                 </tr>
                             </thead>
@@ -31,7 +32,8 @@ const EliminarVehiculo = ({ vehiculos, setVehiculos }) => {
                                     <th>{v.marca}</th>
                                     <th>{v.modelo}</th>
                                     <th>  {v.anio}</th>
-                                    <th>  {v.modelo}</th>
+                                    <th>  {v.patente}</th>
+                                    <th>  {v.transmision}</th>
                                     <button onClick={() => handleDelete(v.id)}>Eliminar</button>
                                 </tr>
                             </thead></Table>  
