@@ -25,7 +25,6 @@ const SeccionCRUD = () => {
             </Tab>
             <Tab eventKey="mostrar" title="Mostrar">
                 <MostrarVehiculos vehiculos={vehiculos} />
-                
             </Tab>
         </Tabs>
         

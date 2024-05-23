@@ -26,7 +26,7 @@ switch($requestMethod) {
         addVehiculo($conn);
         break;
     default:
-        echo json_encode(array("message" => "Request method not supported"));
+        echo json_encode(array("message" => "Método de solicitud no compatible"));
         break;
 }
 
@@ -43,7 +43,7 @@ function getVehiculos($conn) {
 }
 
 function addVehiculo($conn) {
-    $data = json_decode(file_get_contents("php://input"), true);
+    $data = json_decode(file_get_contents(""), true);
     $marca = $data['marca'];
     $modelo = $data['modelo'];
     $anio = $data['anio'];
