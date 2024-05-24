@@ -1,7 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SeccionCRUD from './Componentes/Vehiculo/SeccionCRUD';
+import Agregar from './Componentes/Axios/Agregar_axios';
 import Axios from './Componentes/Axios/Axios';
+import AgregarVehiculo from './Componentes/Axios/Agregar_axios';
+
+
 
 function App() {
     return (
@@ -11,6 +15,7 @@ function App() {
             </header>
             <main>
                 <SeccionCRUD/>
+  <AgregarVehiculo/>
                 <Axios/>
             </main>
         </div>

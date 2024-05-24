@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+
 const Vehiculos = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost/Tracelink/conexion.php')
-            .then(response => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost/Tracelink/conexion.php');
                 setData(response.data);
-            })
-            .catch(error => {
+            } catch (error) {
                 setError(error);
-            });
+            }
+        };
+
+        fetchData();
     }, []);
 
     if (error) {
@@ -36,16 +40,17 @@ const Vehiculos = () => {
                                     <th>PATENTE</th>
                                 </tr>
                             </thead>
-                            <thead>
+                            <tbody>
                                 <tr>
-                                    <th> {v.id} </th>
-                                    <th>{v.marca}</th>
-                                    <th>  {v.modelo}</th>
-                                       <th>  {v.anio}</th>
-                                    <th>  {v.transmision}</th>
-                                    <th> {v.patente}</th>
+                                    <td>{v.id}</td>
+                                    <td>{v.marca}</td>
+                                    <td>{v.modelo}</td>
+                                    <td>{v.anio}</td>
+                                    <td>{v.transmision}</td>
+                                    <td>{v.patente}</td>
                                 </tr>
-                            </thead></Table>
+                            </tbody>
+                        </Table>
                     </li>
                 ))}
             </ul>
