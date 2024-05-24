@@ -56,3 +56,5 @@ function addVehiculo($conn) {
 
 $conn->close();
 ?>
+
+

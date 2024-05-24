@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SeccionCRUD from './Componentes/Vehiculo/SeccionCRUD';
+import Axios from './Componentes/Axios/Axios';
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             </header>
             <main>
                 <SeccionCRUD/>
+                <Axios/>
             </main>
         </div>
     );

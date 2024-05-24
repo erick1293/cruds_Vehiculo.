@@ -33,3 +33,4 @@ const SeccionCRUD = () => {
 
 export default SeccionCRUD;
 
+// node.sj 
