@@ -1,11 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SeccionCRUD from './Componentes/Vehiculo/SeccionCRUD';
-import Agregar from './Componentes/Axios/Agregar_axios';
-import Axios from './Componentes/Axios/Axios';
-import AgregarVehiculo from './Componentes/Axios/Agregar_axios';
-
-
+import ModificarVehiculo from './Componentes/Axios/Modificar_vehiculos';
 
 function App() {
     return (
@@ -14,9 +9,7 @@ function App() {
                 <h1>Gestión de Vehículos</h1>
             </header>
             <main>
-                <SeccionCRUD/>
-  <AgregarVehiculo/>
-                <Axios/>
+                <ModificarVehiculo/>
             </main>
         </div>
     );

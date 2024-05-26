@@ -75,13 +75,3 @@ const ModificarVehiculo = ({ vehiculos, setVehiculos }) => {
 export default ModificarVehiculo;
 
 
-// <div>
-//        <select onChange={handleChange} value={id}>
-//          <option value="">Seleccione un vehículo</option>
-//        {vehiculos.map(v => (
-//          <option key={v.id} value={v.id}>{v.marca} {v.modelo}</option>
-//    ))}
-// </select>
-// </div>
-
-
