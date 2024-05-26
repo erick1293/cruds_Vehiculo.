@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Table, Button, Modal,Form } from 'react-bootstrap';
-import AgregarVehiculo from './Agregar_axios'; // Asegúrate de tener la ruta correcta
+import { Table, Button, Modal, Form, FormControl } from 'react-bootstrap';
 
 const Vehiculos = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
+    const [filtro, setFiltro] = useState('');
     const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null);
     const [editando, setEditando] = useState(false);
     const [nuevoVehiculo, setNuevoVehiculo] = useState({
@@ -58,7 +58,10 @@ const Vehiculos = () => {
 
     const handleEditar = (e) => {
         const { name, value } = e.target;
-        setNuevoVehiculo({ ...nuevoVehiculo, [name]: value });
+        setNuevoVehiculo(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     };
 
     const handleSubmit = async (e) => {
@@ -86,13 +89,27 @@ const Vehiculos = () => {
         }
     };
 
+    const handleBuscar = (e) => {
+        setFiltro(e.target.value);
+    };
+
+    const vehiculosFiltrados = data.filter(v => {
+        return v.marca.toLowerCase().includes(filtro.toLowerCase()) ||
+               v.modelo.toLowerCase().includes(filtro.toLowerCase()) ||
+               v.anio.toString().includes(filtro.toLowerCase()) ||
+               v.transmision.toLowerCase().includes(filtro.toLowerCase()) ||
+               v.patente.toLowerCase().includes(filtro.toLowerCase()) ||
+               v.id.toLowerCase().includes(filtro.toLowerCase());
+    });
+
     if (error) {
         return <div>Error: {error.message}</div>;
     }
 
     return (
         <div>
-            <h1>Vehículos     <AgregarVehiculo onAgregar={fetchData} /> </h1>
+            <h1>Vehículos</h1>
+            <FormControl type="text" placeholder="Buscar..." className="mb-3" onChange={handleBuscar} />
             <Table>
                 <thead>
                     <tr>
@@ -106,7 +123,7 @@ const Vehiculos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map(v => (
+                    {vehiculosFiltrados.map(v => (
                         <tr key={v.id}>
                             <td>{v.id}</td>
                             <td>{v.marca}</td>
@@ -152,7 +169,6 @@ const Vehiculos = () => {
                     </Form>
                 </Modal.Body>
             </Modal>
-          
         </div>
     );
 };
